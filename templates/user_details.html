@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ user.email }} - Details{% endblock %}
+
+{% block body %}
+<h1>{{ user.email }}</h1>
+<ul>
+    {% for rating in user.ratings %}
+      <li>
+          <img src={{rating.movie.poster_path}} height="100px" weight="100px">
+         <h1>{{ rating.movie.title}}</h1> 
+         <h1>Score: {{ rating.score }}</h1> 
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
