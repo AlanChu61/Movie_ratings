@@ -7,7 +7,15 @@
 
 <p>
   {{ movie.overview }}
-</p>
-
+  {{movie.movie_id}}
+  </p>
+<form action="/user_rating" method="POST">
+  <label for="">Rate the movie from 0 to 5:</label>
+  <input type="text" name="user_grade" >
+  <input type="hidden" name="movie" value={{movie}}>
+  <input type="hidden" name="movie_id" value={{movie.movie_id}}>
+  <input type="submit">
+</form>
 <img src="{{ movie.poster_path }}">
+
 {% endblock %}
